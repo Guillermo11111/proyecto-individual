@@ -1,0 +1,216 @@
+{
+  "interactionModel": {
+    "dialog": {
+      "intents": [
+        {
+          "slots": [
+            {
+              "name": "res",
+              "elicitationRequired": true,
+              "validations": [
+                {
+                  "values": [
+                    "no",
+                    "No",
+                    "si",
+                    "Si"
+                  ],
+                  "type": "isInSet",
+                  "prompt": "Slot.Validation.993553308974.1486562631937.1002644241495"
+                }
+              ],
+              "type": "sino",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.993553308974.1486562631937"
+              }
+            }
+          ],
+          "name": "resp",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "cat",
+              "elicitationRequired": true,
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.865568631455.505568059705"
+              }
+            }
+          ],
+          "name": "seleccion",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "nombre",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.627228828923.1601374431175"
+              }
+            }
+          ],
+          "name": "registrarNombre",
+          "confirmationRequired": false,
+          "prompts": {}
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": [
+            "cancela",
+            "cancelar"
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+            "hasta luego",
+            "detener"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "HelloWorldIntent",
+          "samples": [
+            "hola",
+            "como estás",
+            "di hola mundo",
+            "di hola",
+            "hola mundo"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "slots": [
+            {
+              "name": "res",
+              "type": "sino"
+            }
+          ],
+          "name": "resp",
+          "samples": [
+            "{res} quiero"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "cat",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "name": "seleccion",
+          "samples": [
+            "quiero que me muestres juguetes de la categoria {cat}",
+            "la {cat}",
+            "la categoria {cat}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "nombre",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "name": "registrarNombre",
+          "samples": [
+            "es {nombre}",
+            "yo me llamo {nombre}",
+            "me llamo {nombre}",
+            "mi nombre es {nombre}"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "datosIntent",
+          "samples": [
+            "mas datos",
+            "datos",
+            "los datos",
+            "si quiero mas informacion",
+            "informacion",
+            "la información",
+            "un dato"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "no"
+              }
+            },
+            {
+              "name": {
+                "value": "si"
+              }
+            }
+          ],
+          "name": "sino"
+        }
+      ],
+      "invocationName": "dino juguetería"
+    },
+    "prompts": [
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "prueba diceindo si quiero o en caso contrario no quiero"
+          }
+        ],
+        "id": "Elicit.Slot.993553308974.1486562631937"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "unicamiete se acepta si o no"
+          }
+        ],
+        "id": "Slot.Validation.993553308974.1486562631937.1002644241495"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "intenta diceindo, la categoria uno"
+          }
+        ],
+        "id": "Elicit.Slot.865568631455.505568059705"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "pureba diciendo yo me llamo Arturo"
+          }
+        ],
+        "id": "Elicit.Slot.627228828923.1601374431175"
+      }
+    ]
+  }
+}

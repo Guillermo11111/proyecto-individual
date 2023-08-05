@@ -1,0 +1,238 @@
+{
+  "interactionModel": {
+    "dialog": {
+      "intents": [
+        {
+          "slots": [
+            {
+              "name": "res",
+              "elicitationRequired": true,
+              "validations": [
+                {
+                  "values": [
+                    "no",
+                    "No",
+                    "si",
+                    "Si",
+                    "yes",
+                    "Yes"
+                  ],
+                  "type": "isInSet",
+                  "prompt": "Slot.Validation.993553308974.1486562631937.1002644241495"
+                }
+              ],
+              "type": "sino",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.993553308974.1486562631937"
+              }
+            }
+          ],
+          "name": "resp",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "cat",
+              "elicitationRequired": true,
+              "validations": [
+                {
+                  "values": [
+                    "1",
+                    "2",
+                    "3"
+                  ],
+                  "type": "isInSet",
+                  "prompt": "Slot.Validation.865568631455.505568059705.129764720167"
+                }
+              ],
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.865568631455.505568059705"
+              }
+            }
+          ],
+          "name": "seleccion",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "nombre",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.627228828923.1601374431175"
+              }
+            }
+          ],
+          "name": "registrarNombre",
+          "confirmationRequired": false,
+          "prompts": {}
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": [
+            "bye",
+            "cancel"
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+            "stop"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "HelloWorldIntent",
+          "samples": [
+            "say hello world",
+            "hello",
+            "hello world"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "slots": [
+            {
+              "name": "res",
+              "type": "sino"
+            }
+          ],
+          "name": "resp",
+          "samples": [
+            "{res} i want",
+            "{res} want to"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "cat",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "name": "seleccion",
+          "samples": [
+            "I want you to show me toys from the category {cat}",
+            "the {cat}",
+            "the category {cat}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "nombre",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "name": "registrarNombre",
+          "samples": [
+            "is {nombre}",
+            "my name is {nombre}"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "datosIntent",
+          "samples": [
+            "More data",
+            "data",
+            "the data",
+            "yes I want more information",
+            "the information",
+            "information"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "yes"
+              }
+            },
+            {
+              "name": {
+                "value": "no"
+              }
+            },
+            {
+              "name": {
+                "value": "si"
+              }
+            }
+          ],
+          "name": "sino"
+        }
+      ],
+      "invocationName": "dino toy"
+    },
+    "prompts": [
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "try saying if I want or otherwise I don\u0027t want"
+          }
+        ],
+        "id": "Elicit.Slot.993553308974.1486562631937"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "unicamiete is accepted yes or no"
+          }
+        ],
+        "id": "Slot.Validation.993553308974.1486562631937.1002644241495"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "try saying, category one"
+          }
+        ],
+        "id": "Elicit.Slot.865568631455.505568059705"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "select only between category one, two or three"
+          }
+        ],
+        "id": "Slot.Validation.865568631455.505568059705.129764720167"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "pureba diciendo yo me llamo Arturo"
+          }
+        ],
+        "id": "Elicit.Slot.627228828923.1601374431175"
+      }
+    ]
+  }
+}
